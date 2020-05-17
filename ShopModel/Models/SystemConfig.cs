@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Shop.Model.Models
 {
     [Table("SystemConfigs")]
-   public class SystemConfigs
+   public class SystemConfig
     {
         [Key]
         public int ID { set; get; }

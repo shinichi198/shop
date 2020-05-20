@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Shop.Data.Infrastructure
 {
-   public abstract class RespositoryBase<T> where T:class
+   public abstract class RepositoryBase<T>:IRepository<T> where T:class
     {
         private ShopDbContext dbContext;
         private readonly IDbSet<T> dbSet;
@@ -23,12 +23,16 @@ namespace Shop.Data.Infrastructure
             get { return dbContext ?? (dbContext = DbFactory.Init()); }
         }
 
-        protected RespositoryBase(IDbFactory dbFactory)
+        protected RepositoryBase(IDbFactory dbFactory)
         {
             DbFactory = dbFactory;
             dbSet = DbContext.Set<T>();
         }
 
+        public virtual void Add(T entity)
+        {
+            dbSet.Add(entity);
+        }
         public virtual void Update(T entity)
         {
             dbSet.Attach(entity);

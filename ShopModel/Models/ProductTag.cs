@@ -12,14 +12,17 @@ namespace Shop.Model.Models
    public class ProductTag
     {
         [Key]
+        [Column(Order=1)]
         public int ProductID { set; get; }
         [Key]
-        [Column(TypeName ="varchar")]
+        [Column(TypeName ="varchar",Order =2)]
         [MaxLength(50)]
         public string TagID { set; get; }
         [ForeignKey("ProductID")]
+        [Column(Order=1)]
         public virtual Product Product { set; get; }
         [ForeignKey("TagID")]
+        [Column(Order=2)]
         public virtual Tag Tag { set; get; }
     }
 }

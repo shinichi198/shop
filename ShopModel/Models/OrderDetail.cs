@@ -12,13 +12,17 @@ namespace Shop.Model.Models
    public class OrderDetail
     {
         [Key]
+        [Column(Order =1)]
         public int OrderID { set; get; }
         [Key]
+        [Column(Order =2)]
         public int ProductID { set; get; }
         public int Quantitty { set; get; }
         [ForeignKey("OrderID")]
+        [Column(Order =1)]
         public virtual Order Order { set; get; }
         [ForeignKey("ProductID")]
+        [Column(Order =2)]
         public virtual Product Product { set; get; }
     }
 }

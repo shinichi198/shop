@@ -13,6 +13,7 @@ namespace Shop.Data
         public ShopDbContext() : base("ShopConnection")
         {
             this.Configuration.LazyLoadingEnabled = false;
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<ShopDbContext, Shop.Data.Migrations.Configuration>());
         }
         public DbSet<Footer>Footers{set;get;}
         public DbSet<Menu> Menus { set; get; }

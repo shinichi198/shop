@@ -23,7 +23,8 @@ namespace Shop.Model.Models
        
         public int CategoryID { set; get; }
         public string Image { set; get; }
-        public XElement MoreImages { set; get; }
+        [Column(TypeName = "xml")]
+        public string MoreImages { set; get; }
         public decimal Price { set; get; }
         public decimal? PromotionPrice { set; get; }
         public int? Warranty { set; get; }
@@ -34,5 +35,7 @@ namespace Shop.Model.Models
         public int? ViewCount { set; get; }
         [ForeignKey("CategoryID")]
         public virtual ProductCategory ProductCategory { set; get; }
+
+        public virtual IEnumerable<OrderDetail> OrderDetails { set; get; }
     }
 }

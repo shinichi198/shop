@@ -24,6 +24,7 @@ namespace Shop.Model.Models
         public string Alias { set; get; }
         [MaxLength(500)]
         public string Description { set; get; }
+        public int ParentID { set; get; }
         [MaxLength(256)]
         public string Image { set; get; }
         public bool? HomeFlag { set; get; }

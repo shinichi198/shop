@@ -12,6 +12,7 @@ namespace Shop.Data.Infrastructure
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);
+        void Delete(int id);
         //Delete multi records
         void DeleteMulti(Expression<Func<T, bool>> where);
         //Get an entity by int id
